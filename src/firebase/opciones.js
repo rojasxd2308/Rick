@@ -2,12 +2,48 @@ import { db } from "./inicio";
 import { collection, addDoc, getDocs,deleteDoc,doc , query , where} from "firebase/firestore";
 import { async } from "@firebase/util";
 
+export function getAll(idUser) {
+  return new Promise(async (resolve,reject) => {
+    let res = [];
+    try {
+      const cartas = await getDocs(collection(db, "cards"));
+      cartas.forEach((doc) => {
+        let carta = doc.data();
+        if (carta.user == idUser) {
+          res = [...res,{id: carta.id , rarity: carta.rarity}]
+        }
+      });
+      resolve(res);
+    } catch (error) {
+      reject(error);
+    }
+  })  
+}
+export function getRarity(idUser,idCard) {
+  return new Promise(async (resolve,reject) => {
+    let res = [];
+    try {
+      const cartas = await getDocs(collection(db, "cards"));
+      cartas.forEach((doc) => {
+        let carta = doc.data();
+        if (carta.user = idUser && carta.id == idCard) {
+          res = [...res, carta.rarity ]
+        }
+      });
+      resolve(res);
+    } catch (error) {
+      reject(error);
+    }
+  })  
+}
+
 export async function newCharacter(params) {
   try {
     console.log(params)
     const res = await addDoc(collection(db, "cards"),{
       id: params.id,
-      user: params.user
+      user: params.user,
+      rarity: params.rarity
     })
   } catch (error) {
     console.log(error);

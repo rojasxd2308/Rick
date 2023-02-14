@@ -12,6 +12,7 @@ export function reducer(state=initialState,actions) {
             return {
                 ...state,myFavorites: [...state.myFavorites,actions.payload]
             }
+            
             break;
         case ACTION_2:
             let filtrado = state.myFavorites.filter( (item) => 

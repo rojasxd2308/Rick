@@ -1,3 +1,40 @@
+@font-face {
+    font-family: 'Mplus';
+    src: url('../fonts/Mplus1p-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 .details-container{
-    background-color: wheat;
+
+    max-width: min-content;
+    margin: auto;
+}
+
+.card-image{
+    width: 350px;
+    max-height: 250px;
+    overflow: hidden;
+    object-fit:cover;
+    object-position: top;
+    padding: 10px;
+    
+}
+.planeta{
+    background-color: coral;
+}
+.nameCard{
+    font-size: 1.5em;
+    font-family: 'Mplus';
+
+}
+span {
+    font-family: "Mplus";
+    font-size: 1em;
+}
+.descrCard{
+    margin-bottom: 20px;
+    padding: 10px;
+    margin: 10px;
+    background-color: antiquewhite;
 }
