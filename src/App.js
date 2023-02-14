@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import About from "./components/About";
 import Detail from "./components/Detail";
-import Form from "./components/Form";
+import Form from "./components/Form.jsx";
 import { useLocation } from "react-router-dom";
 import {
   add,
@@ -123,7 +123,7 @@ function App({ falsoToken, idUser }) {
   //logeo
 
   return (
-    <div className="App" style={{ padding: "25px" }}>
+    <div className="App" >
       {location.pathname !== "/" && <Nav alBuscar={alBuscar} />}
       <Routes>
         <Route path="/" element={<Form user={user} login={login} />} />
@@ -142,7 +142,6 @@ function App({ falsoToken, idUser }) {
         />
       </Routes>
 
-      <hr />
       <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     </div>

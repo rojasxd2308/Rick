@@ -1,5 +1,5 @@
 //esto es para la animacion de search input 
-
+/*
 const searchFocus = document.getElementById('search-focus');
 const keys = [
   { keyCode: 'AltLeft', isTriggered: false },
@@ -26,4 +26,4 @@ window.addEventListener('keyup', (e) => {
       obj.isTriggered = false;
     }
   });
-});
+});*/
