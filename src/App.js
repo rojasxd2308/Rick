@@ -1,14 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
-import Cards from "./components/Cards.jsx";
+import Cards from "./components/Cards/Cards";
 //import characters, { Rick } from './data.js'
-import Nav from "./components/Nav";
+import Nav from "./components/navBar/Nav";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import About from "./components/About";
-import Detail from "./components/Detail";
-import Form from "./components/Form.jsx";
+import About from "./components/About/About";
+import Detail from "./components/DetailCard/Detail";
+import Form from "./components/Login/Form";
+import Home from './components/home/Home';
 import { useLocation } from "react-router-dom";
 import {
   add,
@@ -128,12 +129,15 @@ function App({ falsoToken, idUser }) {
       <Routes>
         <Route path="/" element={<Form user={user} login={login} />} />
         <Route
-          path="/home"
+          path="/cards"
           element={
             <div className="container-card">
               <Cards characters={characters} onClose={onClose} />
             </div>
           }
+        />
+        <Route path='/home'
+          element={<Home />}
         />
         <Route path="/about" element={<About />} />
         <Route

@@ -1,0 +1,20 @@
+nav.navbar.navbar-expand.navbar-dark {
+    width: 100%;
+    background-color: #319e52;
+
+}
+nav.navbar-nav a{
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+nav.navbar .container{
+    margin-left: 0!important;
+}
+nav.navbar .container .navbar-brand .icono{
+    background-image: url('../../image/icon-nav.png');
+    background-color: #319e52;
+    width: 10vw;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+}
